@@ -1,0 +1,17 @@
+{
+	"scripts": {
+		"build:elm": "elm make src/Main.elm --output=dist/main.js",
+		"build:css": "tailwindcss -i ./src/main.css -o ./dist/main.css",
+		"watch:elm": "elm-live src/Main.elm --hot --pushstate  --open --dir=. --start-page=dist/index.html -- --output=dist/main.js --debug",
+		"watch:css": "tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
+		"dev": "npm-run-all --parallel watch:elm watch:css",
+		"build": "npm-run-all build:elm build:css"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"elm-live": "^4.0.2",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.13"
+	}
+}
